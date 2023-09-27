@@ -4,7 +4,7 @@ use ffmpeg_cli::{FfmpegBuilder, File, Parameter};
 
 pub async fn process_file(input: &str) {
     let output = input
-        .split_once('.')
+        .rsplit_once('.')
         .expect("Invalid Filename")
         .0
         .to_owned()
